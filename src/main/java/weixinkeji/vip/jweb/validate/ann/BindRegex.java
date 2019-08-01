@@ -22,7 +22,7 @@ public @interface BindRegex {
 	/**
 	 * 返回校验结果时，显示的字段名。默认与参数名或属性名一样
 	 * 
-	 * @return
+	 * @return String
 	 */
 	public String keyName() default "";
 
@@ -66,7 +66,7 @@ public @interface BindRegex {
 	 * 
 	 * 当值为RegexNullType.unknow时，只采用引用的
 	 * 
-	 * @return
+	 * @return RegexNullType
 	 */
 	public RegexNullType refAlloyNull() default RegexNullType.unknow;
 

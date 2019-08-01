@@ -1,5 +1,7 @@
 package weixinkeji.vip.jweb.validate._tools;
 
+import java.util.Date;
+
 import weixinkeji.vip.jweb.validate.JWebMVCValidateVo;
 import weixinkeji.vip.jweb.validate.ann.BindRegex;
 import weixinkeji.vip.jweb.validate.ann.RegexNullType;
@@ -9,35 +11,27 @@ public class Tools {
 	/**
 	 * 是否java基本类型
 	 * 
-	 * @param type
+	 * @param c Class
 	 * @return boolean
-	 * @throws Exception
 	 */
-	public static boolean isJavaBaseType(Class<?> type) {
-		switch (type.getSimpleName()) {
-		case "String":
-		case "boolean":
-		case "Boolean":
-		case "short":
-		case "Short":
-		case "int":
-		case "Integer":
-		case "long":
-		case "Long":
-		case "float":
-		case "Float":
-		case "double":
-		case "Double":
-		case "Date":
-			return true;
-		default:
-			return false;
-		}
+	public static boolean isJavaBaseType(Class<?> c) {
+		return c == byte.class || c == Byte.class || c == byte[].class || c == Byte[].class // byte
+				|| c == boolean.class || c == Boolean.class// boolean
+				|| c == char.class || c == Character.class || c == char[].class || c == Character[].class// char
+				|| c == short.class || c == Short.class// short
+				|| c == int.class || c == Integer.class // int
+				|| c == long.class || c == Long.class // long
+				|| c == float.class || c == Float.class // float
+				|| c == double.class || c == Double.class // double
+				|| c == Date.class || c == java.sql.Date.class;
 	}
+
 	/**
 	 * 取得属性上的校验数据
 	 * 
-	 * @param br BingRegex
+	 * @param viewKeyName    String 输出字符时的字符key
+	 * @param br             BindRegex 绑定表达式的注解
+	 * @param orderAlloyNull Boolean 不为null时，表示表达式中[alloyNull]强制使用此参数表示 是否为null
 	 * @return JWebMVCValidateVo
 	 */
 	public static JWebMVCValidateVo getRegex(String viewKeyName, BindRegex br, Boolean orderAlloyNull) {

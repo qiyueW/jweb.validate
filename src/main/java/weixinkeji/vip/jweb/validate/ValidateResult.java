@@ -20,6 +20,8 @@ public class ValidateResult {
 	 * 
 	 * @param name    字段名
 	 * @param message 错误提示
+	 * 
+	 * @return ValidateResult
 	 */
 	public ValidateResult addError(String name, String message) {
 		this.errorCount++;

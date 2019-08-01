@@ -12,6 +12,7 @@ public class _0_init_validateLib extends __InitModel {
 	 * 需要扫描类的集合
 	 * 
 	 * @param list 扫描到的类
+	 * @param sysValidationLib Map
 	 */
 	public _0_init_validateLib(List<Class<?>> list, Map<String, JWebMVCValidateVo> sysValidationLib) {
 		super(list);
