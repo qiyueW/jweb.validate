@@ -16,7 +16,6 @@ import weixinkeji.vip.jweb.validate.ann.BindRegex;
  *
  */
 public class BaseTypeValidateModel {
-//	private final Class<?> voClass;
 	private final JWebMVCValidateVo validateVo;
 	private static final Map<Parameter, BaseTypeValidateModel> voParamMap = new HashMap<>();
 
@@ -46,7 +45,6 @@ public class BaseTypeValidateModel {
 	 * @param param 参数
 	 */
 	private BaseTypeValidateModel(Parameter param) {
-//		this.voClass = param.getType();
 		this.validateVo = getJWebMVCValidateVo(param);
 	}
 
