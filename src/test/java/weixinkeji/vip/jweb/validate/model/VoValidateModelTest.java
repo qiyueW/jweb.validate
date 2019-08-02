@@ -35,11 +35,16 @@ public class VoValidateModelTest extends TestCase {
 	public void testCheck2() {
 		Method[] ms = THelloController.class.getDeclaredMethods();
 		VoValidateModel model;
+		BaseTypeValidateModel bModel;
+		
 		for (Method m : ms) {
 			for (Parameter pobj : m.getParameters()) {
 				if (pobj.getType() == Hello.class) {
 					model = VoValidateModel.getVoValidateModel(pobj);
 					System.out.println(model.check(getHellog(), false));
+				}else {
+					bModel=BaseTypeValidateModel.getVoValidateModel(pobj);
+					System.out.println("abc:"+bModel.chec("abc"));
 				}
 			}
 		}
